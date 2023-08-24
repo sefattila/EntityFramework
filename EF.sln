@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-EF", "EF\1-EF.csproj", "{CB21C58A-BA6C-46E4-B8BA-9E0DFD33D900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-EF-LinqQuary", "2-EF-LinqQuary\2-EF-LinqQuary.csproj", "{32E79686-2E68-47A8-8BE7-85824ACB3D16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-EF-LinqQuary", "2-EF-LinqQuary\2-EF-LinqQuary.csproj", "{32E79686-2E68-47A8-8BE7-85824ACB3D16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-EF-CategoryJoinOrnek", "2-EF-CategoryJoinOrnek\3-EF-CategoryJoinOrnek.csproj", "{642280A5-75C2-4792-8A6C-9CE37DBA4FFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{32E79686-2E68-47A8-8BE7-85824ACB3D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32E79686-2E68-47A8-8BE7-85824ACB3D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32E79686-2E68-47A8-8BE7-85824ACB3D16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{642280A5-75C2-4792-8A6C-9CE37DBA4FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642280A5-75C2-4792-8A6C-9CE37DBA4FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642280A5-75C2-4792-8A6C-9CE37DBA4FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642280A5-75C2-4792-8A6C-9CE37DBA4FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
