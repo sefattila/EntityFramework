@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5-EF-CodeFirstModelDbContex
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MaasBordro", "MaasBordro", "{E3603661-1B6D-41AF-B326-1BDFE8EE84A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaasBordroLib", "MaasBordroLib\MaasBordroLib.csproj", "{89994ADE-702D-4460-8210-8F29EFDAD5B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaasBordroLib", "MaasBordroLib\MaasBordroLib.csproj", "{89994ADE-702D-4460-8210-8F29EFDAD5B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaasBordroConsole", "MaasBordroConsole\MaasBordroConsole.csproj", "{10852083-F9E3-4AE9-ACC7-7B9CDC1BC914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaasBordroConsole", "MaasBordroConsole\MaasBordroConsole.csproj", "{10852083-F9E3-4AE9-ACC7-7B9CDC1BC914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6-EF-ProductCategoryDetail", "6-EF-ProductCategoryDetail\6-EF-ProductCategoryDetail.csproj", "{09A1DC4D-74EF-490B-B7F2-3BDC20A5E760}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{10852083-F9E3-4AE9-ACC7-7B9CDC1BC914}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10852083-F9E3-4AE9-ACC7-7B9CDC1BC914}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10852083-F9E3-4AE9-ACC7-7B9CDC1BC914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A1DC4D-74EF-490B-B7F2-3BDC20A5E760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A1DC4D-74EF-490B-B7F2-3BDC20A5E760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A1DC4D-74EF-490B-B7F2-3BDC20A5E760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A1DC4D-74EF-490B-B7F2-3BDC20A5E760}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
