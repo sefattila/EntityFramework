@@ -12,6 +12,8 @@ namespace _5_EF_CodeFirstModelDbContextDbSet.Entities
         public string Title { get; set; }
         public string Subject { get; set; }
         public int AuthorId { get; set; } //foreign key olarak algılayacak
-        public Author Author { get; set; }
+
+        //navigation property
+        public virtual Author Author { get; set; }
     }
 }

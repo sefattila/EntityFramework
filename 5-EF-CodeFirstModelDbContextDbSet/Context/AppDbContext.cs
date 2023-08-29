@@ -21,6 +21,7 @@ namespace _5_EF_CodeFirstModelDbContextDbSet.Context
         //SQL Configüreasyonlarını yaptığım metot
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseLazyLoadingProxies();
             optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=Book;Trusted_Connection=True;");
         }
 
