@@ -27,10 +27,20 @@ namespace _6_EF_ProductCategoryDetail
             //BaseService<Category> baseService=new BaseService<Category>(new AppDbContext());
             //baseService.Add(category);
 
-            Product product = new Product() { CategoryRefId = 2, Name = "Cin Ali", Price = 80m, Stock = 100, Status = Statu.Active };
+            Product product = new Product()
+            {
+                Category=new Category() { Name="Kitap"},
+                CategoryRefId = 2,
+                Name = "Cin Ali",
+                Price = 80m,
+                Stock = 100,
+                Statu = Statu.Active
+            };
 
-            BaseService<Product> baseService1=new BaseService<Product>(new AppDbContext());
+            BaseService<Product> baseService1 = new BaseService<Product>(new AppDbContext());
             baseService1.Add(product);
+
+            var product1 = baseService1.GetByDefaults(p => p.Statu != Statu.Passive);
 
             Console.WriteLine("Başşarılı");
         }

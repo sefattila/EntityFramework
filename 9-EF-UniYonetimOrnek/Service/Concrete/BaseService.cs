@@ -1,14 +1,13 @@
-﻿using _6_EF_ProductCategoryDetail.Context;
-using _6_EF_ProductCategoryDetail.Service.Abstract;
+﻿using _9_EF_UniYonetimOrnek.Contexts;
+using _9_EF_UniYonetimOrnek.Service.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _6_EF_ProductCategoryDetail.Service.Concrete
+namespace _9_EF_UniYonetimOrnek.Service.Concrete
 {
     public class BaseService<T> : IBaseService<T> where T : class
     {

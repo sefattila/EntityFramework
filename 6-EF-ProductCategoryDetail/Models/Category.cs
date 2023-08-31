@@ -7,11 +7,11 @@ using _6_EF_ProductCategoryDetail.Enums;
 
 namespace _6_EF_ProductCategoryDetail.Entities
 {
-    public class Category
+    public class Category : BaseClass
     {
-        public int CategoryId { get; set; }
+        //public int CategoryId { get; set; }
         public string Name { get; set; }
-        public Statu Status { get; set; }
+        //public Statu Status { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

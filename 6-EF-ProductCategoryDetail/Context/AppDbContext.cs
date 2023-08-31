@@ -1,5 +1,6 @@
 ﻿using _6_EF_ProductCategoryDetail.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,5 +38,6 @@ namespace _6_EF_ProductCategoryDetail.Context
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }

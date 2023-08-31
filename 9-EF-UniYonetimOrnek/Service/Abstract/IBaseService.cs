@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _6_EF_ProductCategoryDetail.Service.Abstract
+namespace _9_EF_UniYonetimOrnek.Service.Abstract
 {
     public interface IBaseService<T> where T : class
     {

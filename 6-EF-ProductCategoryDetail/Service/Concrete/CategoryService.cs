@@ -63,7 +63,7 @@ namespace _6_EF_ProductCategoryDetail.Service.Concrete
 
         public bool GetCategoryAny(int id)
         {
-            return _context.Categories.Any(a => a.CategoryId == id);
+            return _context.Categories.Any(a => a.Id == id);
             //using (var context = new AppDbContext())
             //{
             //    return context.Categories.Any(a => a.CategoryId == id);

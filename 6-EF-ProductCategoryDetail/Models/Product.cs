@@ -7,11 +7,11 @@ using _6_EF_ProductCategoryDetail.Enums;
 
 namespace _6_EF_ProductCategoryDetail.Entities
 {
-    public class Product
+    public class Product : BaseClass
     {
         private double _stock;
         private decimal _price;
-        public int ProductId { get; set; }
+        //public int ProductId { get; set; }
         public string Name { get; set; }
         public double Stock
         {
@@ -41,7 +41,7 @@ namespace _6_EF_ProductCategoryDetail.Entities
             }
         }
         public DateTime Date { get; set; } = DateTime.Now;
-        public Statu Status { get; set; }
+        // public Statu Status { get; set; }
 
         public int CategoryRefId { get; set; }
 

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using _6_EF_ProductCategoryDetail.Context;
+using _9_EF_UniYonetimOrnek.Contexts;
 
 #nullable disable
 
-namespace _6_EF_ProductCategoryDetail.Migrations
+namespace _9_EF_UniYonetimOrnek.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace _6_EF_ProductCategoryDetail.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.Category", b =>
+            modelBuilder.Entity("_9_EF_UniYonetimOrnek.Models.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,134 +36,129 @@ namespace _6_EF_ProductCategoryDetail.Migrations
                     b.Property<DateTime?>("DeleteDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Statu")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CategoryRefId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeleteDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Statu")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Stock")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime?>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryRefId");
-
-                    b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.ProductDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Color")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeleteDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Height")
-                        .HasColumnType("float");
-
-                    b.Property<int>("ProductRefId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Statu")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Width")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductRefId")
+                    b.HasIndex("TeacherId")
                         .IsUnique();
 
-                    b.ToTable("ProductDetails");
+                    b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.Product", b =>
+            modelBuilder.Entity("_9_EF_UniYonetimOrnek.Models.Student", b =>
                 {
-                    b.HasOne("_6_EF_ProductCategoryDetail.Entities.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryRefId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("_9_EF_UniYonetimOrnek.Models.Teacher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Teachers");
+                });
+
+            modelBuilder.Entity("CourseStudent", b =>
+                {
+                    b.Property<int>("CoursesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CoursesId", "StudentsId");
+
+                    b.HasIndex("StudentsId");
+
+                    b.ToTable("StudentCourse", (string)null);
+                });
+
+            modelBuilder.Entity("_9_EF_UniYonetimOrnek.Models.Course", b =>
+                {
+                    b.HasOne("_9_EF_UniYonetimOrnek.Models.Teacher", "Teacher")
+                        .WithOne("Course")
+                        .HasForeignKey("_9_EF_UniYonetimOrnek.Models.Course", "TeacherId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("CourseStudent", b =>
+                {
+                    b.HasOne("_9_EF_UniYonetimOrnek.Models.Course", null)
+                        .WithMany()
+                        .HasForeignKey("CoursesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.ProductDetail", b =>
-                {
-                    b.HasOne("_6_EF_ProductCategoryDetail.Entities.Product", "Product")
-                        .WithOne("ProductDetail")
-                        .HasForeignKey("_6_EF_ProductCategoryDetail.Entities.ProductDetail", "ProductRefId")
+                    b.HasOne("_9_EF_UniYonetimOrnek.Models.Student", null)
+                        .WithMany()
+                        .HasForeignKey("StudentsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.Category", b =>
+            modelBuilder.Entity("_9_EF_UniYonetimOrnek.Models.Teacher", b =>
                 {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.Product", b =>
-                {
-                    b.Navigation("ProductDetail")
+                    b.Navigation("Course")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

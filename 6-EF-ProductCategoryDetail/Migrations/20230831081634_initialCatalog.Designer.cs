@@ -12,8 +12,8 @@ using _6_EF_ProductCategoryDetail.Context;
 namespace _6_EF_ProductCategoryDetail.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230829111551_initialCatolog")]
-    partial class initialCatolog
+    [Migration("20230831081634_initialCatalog")]
+    partial class initialCatalog
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,40 +26,52 @@ namespace _6_EF_ProductCategoryDetail.Migrations
 
             modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Status")
+                    b.Property<int>("Statu")
                         .HasColumnType("int");
 
-                    b.HasKey("CategoryId");
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.Product", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("CategoryRefId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DetailId")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -68,45 +80,57 @@ namespace _6_EF_ProductCategoryDetail.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Status")
+                    b.Property<int>("Statu")
                         .HasColumnType("int");
 
                     b.Property<double>("Stock")
                         .HasColumnType("float");
 
-                    b.HasKey("ProductId");
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
-                    b.HasIndex("CategoryId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryRefId");
 
                     b.ToTable("Products");
                 });
 
             modelBuilder.Entity("_6_EF_ProductCategoryDetail.Entities.ProductDetail", b =>
                 {
-                    b.Property<int>("ProductDetailId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductDetailId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<double>("Height")
                         .HasColumnType("float");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProductRefId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status")
+                    b.Property<int>("Statu")
                         .HasColumnType("int");
 
-                    b.Property<double>("Weight")
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Width")
                         .HasColumnType("float");
 
-                    b.HasKey("ProductDetailId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("ProductId")
+                    b.HasIndex("ProductRefId")
                         .IsUnique();
 
                     b.ToTable("ProductDetails");
@@ -116,7 +140,7 @@ namespace _6_EF_ProductCategoryDetail.Migrations
                 {
                     b.HasOne("_6_EF_ProductCategoryDetail.Entities.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("CategoryRefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -127,7 +151,7 @@ namespace _6_EF_ProductCategoryDetail.Migrations
                 {
                     b.HasOne("_6_EF_ProductCategoryDetail.Entities.Product", "Product")
                         .WithOne("ProductDetail")
-                        .HasForeignKey("_6_EF_ProductCategoryDetail.Entities.ProductDetail", "ProductId")
+                        .HasForeignKey("_6_EF_ProductCategoryDetail.Entities.ProductDetail", "ProductRefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
