@@ -21,11 +21,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaasBordroConsole", "MaasBo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6-EF-ProductCategoryDetail", "6-EF-ProductCategoryDetail\6-EF-ProductCategoryDetail.csproj", "{09A1DC4D-74EF-490B-B7F2-3BDC20A5E760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7-EF-Inheretance", "7-EF-Inheretance\7-EF-Inheretance.csproj", "{E6CAC6B5-415C-4516-ADF3-541BD6E7CC8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7-EF-Inheretance", "7-EF-Inheretance\7-EF-Inheretance.csproj", "{E6CAC6B5-415C-4516-ADF3-541BD6E7CC8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8-EF-DataAnnotationAndFluentApi", "8-EF-DataAnnotationAndFluentApi\8-EF-DataAnnotationAndFluentApi.csproj", "{398D95DF-DC9F-4F2A-82AA-1D4E60748241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8-EF-DataAnnotationAndFluentApi", "8-EF-DataAnnotationAndFluentApi\8-EF-DataAnnotationAndFluentApi.csproj", "{398D95DF-DC9F-4F2A-82AA-1D4E60748241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9-EF-UniYonetimOrnek", "9-EF-UniYonetimOrnek\9-EF-UniYonetimOrnek.csproj", "{888A1CD9-7F6F-43F0-9E96-11C3EA4E9BA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9-EF-UniYonetimOrnek", "9-EF-UniYonetimOrnek\9-EF-UniYonetimOrnek.csproj", "{888A1CD9-7F6F-43F0-9E96-11C3EA4E9BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-EF-LifeCycleTrackingSeedData", "10-EF-LifeCycleTrackingSeedData\10-EF-LifeCycleTrackingSeedData.csproj", "{EED28F21-6B82-41C9-A23A-E0A4516C846E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11-EF-NLayerMovie", "11-EF-NLayerMovie", "{18D712D8-5B43-4384-9D83-F5AE7326F973}"
+	ProjectSection(SolutionItems) = preProject
+		Movie.txt = Movie.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.DATA", "Movie.DATA\Movie.DATA.csproj", "{D6341E2C-758B-4A04-8B06-1D437888B506}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.DAL", "Movie.DAL\Movie.DAL.csproj", "{286B49EE-D50A-4606-B35D-3F72AEE54C14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.UI", "Movie.UI\Movie.UI.csproj", "{D7F059EC-6D13-4A21-A153-3D4677D9A15E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieConsole", "MovieConsole\MovieConsole.csproj", "{8F8C78EF-FBEE-46A7-B9A4-51DEB1BB51CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +92,26 @@ Global
 		{888A1CD9-7F6F-43F0-9E96-11C3EA4E9BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{888A1CD9-7F6F-43F0-9E96-11C3EA4E9BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{888A1CD9-7F6F-43F0-9E96-11C3EA4E9BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED28F21-6B82-41C9-A23A-E0A4516C846E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED28F21-6B82-41C9-A23A-E0A4516C846E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED28F21-6B82-41C9-A23A-E0A4516C846E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED28F21-6B82-41C9-A23A-E0A4516C846E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6341E2C-758B-4A04-8B06-1D437888B506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6341E2C-758B-4A04-8B06-1D437888B506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6341E2C-758B-4A04-8B06-1D437888B506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6341E2C-758B-4A04-8B06-1D437888B506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{286B49EE-D50A-4606-B35D-3F72AEE54C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286B49EE-D50A-4606-B35D-3F72AEE54C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286B49EE-D50A-4606-B35D-3F72AEE54C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286B49EE-D50A-4606-B35D-3F72AEE54C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7F059EC-6D13-4A21-A153-3D4677D9A15E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7F059EC-6D13-4A21-A153-3D4677D9A15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F059EC-6D13-4A21-A153-3D4677D9A15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7F059EC-6D13-4A21-A153-3D4677D9A15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8C78EF-FBEE-46A7-B9A4-51DEB1BB51CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8C78EF-FBEE-46A7-B9A4-51DEB1BB51CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8C78EF-FBEE-46A7-B9A4-51DEB1BB51CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8C78EF-FBEE-46A7-B9A4-51DEB1BB51CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +119,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{89994ADE-702D-4460-8210-8F29EFDAD5B6} = {E3603661-1B6D-41AF-B326-1BDFE8EE84A3}
 		{10852083-F9E3-4AE9-ACC7-7B9CDC1BC914} = {E3603661-1B6D-41AF-B326-1BDFE8EE84A3}
+		{D6341E2C-758B-4A04-8B06-1D437888B506} = {18D712D8-5B43-4384-9D83-F5AE7326F973}
+		{286B49EE-D50A-4606-B35D-3F72AEE54C14} = {18D712D8-5B43-4384-9D83-F5AE7326F973}
+		{D7F059EC-6D13-4A21-A153-3D4677D9A15E} = {18D712D8-5B43-4384-9D83-F5AE7326F973}
+		{8F8C78EF-FBEE-46A7-B9A4-51DEB1BB51CD} = {18D712D8-5B43-4384-9D83-F5AE7326F973}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D6D1560-E26F-4FCF-B794-091FC813B4A7}

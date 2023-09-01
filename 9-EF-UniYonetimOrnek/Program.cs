@@ -21,8 +21,11 @@ namespace _9_EF_UniYonetimOrnek
                     Status = Status.Active,
                     Students = new List<Student>() { student }
                 };
-                context.Add(course);
-                context.SaveChanges();
+                //context.Add(course);
+                //context.SaveChanges();
+
+                //BaseService<Course> baseService = new BaseService<Course>(new AppDbContext());
+                //baseService.GetCategory();
             }
         }
     }

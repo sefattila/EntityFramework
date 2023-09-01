@@ -1,0 +1,41 @@
+BaseFilm
+	-Id
+	-CreateDate
+	-ModifiedDate
+	-UpdateDate
+	-Status(Enum)
+
+Kategori:BaseFilm
+	-KategoriAdi
+
+Film:BaseFilm
+	-FilmAdi
+	-FilmSuresi
+	-FilmIzlenmeSayisi
+	-Yayin Tarihi
+	-KategoryId
+	-FilmDetayId
+
+FilmDetay:BaseFilm
+	-FilmDetayi
+	-FilmId
+
+Oyuncu:BaseFilm
+	-OyuncuAdi
+	-OyuncudogumTarihi
+	-OyuncuHayati
+
+OyuncuFilm:BaseFilm
+	-OyuncuId
+	-FilmId
+	-CalismaGunu (int)
+
+
+
+
+
+Film-Oyuncu N-N
+
+Category-Film 1-N
+
+FilmDetay Film 1-1
