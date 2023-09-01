@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using Movie.DAL.Interfaces;
 using Movie.DATA.Abstract;
 using System;
@@ -12,6 +13,13 @@ namespace Movie.DAL.Concrete
 {
     public class BaseDAL<T> : IBaseDAL<T> where T : BaseFilm
     {//eklemeleri yapıcam
+        private DbSet<T> _table;
+
+        public BaseDAL(DbSet<T> table)
+        {
+            _table = table;
+        }
+
         public bool Any(Expression<Func<T, bool>> expression)
         {
             throw new NotImplementedException(); 
@@ -39,7 +47,23 @@ namespace Movie.DAL.Concrete
 
         public List<TResult> GetFilteredList<TResult>(Expression<Func<T, TResult>> select, Expression<Func<T, bool>> where, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> join = null)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _table;
+            if (join != null)
+            {
+                query = join(_table);
+            }
+            if(where!= null)
+            {
+                query=query.Where(where);
+            }
+            if(orderBy!= null)
+            {
+                return orderBy(query).Select(select).ToList();
+            }
+            else
+            {
+                return query.Select(select).ToList();
+            }
         }
 
         public void Update(T entity)
