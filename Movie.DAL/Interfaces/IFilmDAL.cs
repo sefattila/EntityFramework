@@ -9,5 +9,6 @@ namespace Movie.DAL.Interfaces
 {
     public interface IFilmDAL:IBaseDAL<Film>
     {
+        List<Film> GetFilms();
     }
 }

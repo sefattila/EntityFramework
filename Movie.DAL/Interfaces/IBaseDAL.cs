@@ -14,6 +14,7 @@ namespace Movie.DAL.Interfaces
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);
+        //List<T> Get();
         bool Any(Expression<Func<T, bool>> expression);
         T GetDefault(Expression<Func<T, bool>> expression); //firstordefault - singleordefault
         List<T> GetDefaults(Expression<Func<T, bool>> expression); //tüm filmleri getir vs

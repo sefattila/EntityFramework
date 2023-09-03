@@ -1,4 +1,4 @@
-﻿using Movie.DATA.Abstract;
+﻿    using Movie.DATA.Abstract;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,12 +13,12 @@ namespace Movie.DATA.Concrete
     public class Actor : BaseFilm
     {
         public string ActorName { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
 
-        [Column(TypeName ="text")]
+        //[Column(TypeName ="text")]
         public string? Biography { get; set; }
 
-        public IList<FilmActor> FilmActors { get; set; }
+        public virtual IList<FilmActor> FilmActors { get; set; }
 
     }
 }

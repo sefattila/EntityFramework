@@ -14,38 +14,51 @@ namespace Movie.DAL.Concrete
     public class BaseDAL<T> : IBaseDAL<T> where T : BaseFilm
     {//eklemeleri yapıcam
         private DbSet<T> _table;
+        private DbContext _context;
 
-        public BaseDAL(DbSet<T> table)
+        public BaseDAL(DbSet<T> table,DbContext context)
         {
+            _context = context;
             _table = table;
         }
 
+        //Verdiğim değeri karşılıyor mu?
         public bool Any(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException(); 
+            return _table.Any(expression);
         }
 
         public void Create(T entity)
         {
-            throw new NotImplementedException();
+            _table.Add(entity);
+            _context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            _table.Remove(entity);
+            _context.SaveChanges();
         }
+
+        //public List<T> Get()
+        //{
+        //    return _table.ToList();
+        //}
 
         public T GetDefault(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _table.FirstOrDefault(expression);
         }
 
         public List<T> GetDefaults(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _table.Where(expression).ToList();
         }
 
-        public List<TResult> GetFilteredList<TResult>(Expression<Func<T, TResult>> select, Expression<Func<T, bool>> where, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> join = null)
+        public List<TResult> GetFilteredList<TResult>(Expression<Func<T, TResult>> select, 
+            Expression<Func<T, bool>> where, 
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, 
+            Func<IQueryable<T>, IIncludableQueryable<T, object>> join = null)
         {
             IQueryable<T> query = _table;
             if (join != null)
@@ -68,7 +81,8 @@ namespace Movie.DAL.Concrete
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _table.Update(entity);
+            _context.SaveChanges();
         }
     }
 }

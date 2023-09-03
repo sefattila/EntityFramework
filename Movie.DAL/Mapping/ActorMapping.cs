@@ -13,7 +13,12 @@ namespace Movie.DAL.Mapping
     {
         public void Configure(EntityTypeBuilder<Actor> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(x=>x.ActorName).IsRequired();
+            builder.Property(x=>x.BirthDate).IsRequired(false);
+            builder.Property(x => x.Biography)
+                .IsRequired(false)
+                .HasColumnType("text");
+            builder.ToTable("TblActor");
         }
     }
 }

@@ -5,7 +5,7 @@ BaseFilm
 	-UpdateDate
 	-Status(Enum)
 
-Kategori:BaseFilm
+FilmKategori:BaseFilm
 	-KategoriAdi
 
 Film:BaseFilm
@@ -36,6 +36,6 @@ OyuncuFilm:BaseFilm
 
 Film-Oyuncu N-N
 
-Category-Film 1-N
-
-FilmDetay Film 1-1
+FilmCategory-Film 1-N --yapýldý
+ 
+FilmDetay Film 1-1  --yapýldý

@@ -17,6 +17,12 @@ namespace Movie.DAL.Mapping
                 .IsRequired()
                 .HasColumnType("nvarchar(50)");
 
+            builder.Property(x => x.FilmDuration)
+                .IsRequired();
+
+            builder.Property(x => x.PublishDate) 
+                .IsRequired(false);
+
             builder.ToTable("TblFilm");
 
             builder

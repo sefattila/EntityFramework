@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace Movie.DAL.Concrete
 {
-    public class ActorDAL : BaseDAL<Actor>, IActorDAL
+    public class FilmDetailDAL : BaseDAL<FilmDetail>, IFilmDetailDAL
     {
-        private DbSet<Actor> _table;
-        public ActorDAL(DbSet<Actor> table, DbContext context) : base(table, context)
+        private DbSet<FilmDetail> _table;
+        public FilmDetailDAL(DbSet<FilmDetail> table, DbContext context) : base(table, context)
         {
-            _table = table;
+            _table = table; 
         }
 
-        public List<Actor> GetActors()
+        public List<FilmDetail> Get()
         {
             return _table.ToList();
         }

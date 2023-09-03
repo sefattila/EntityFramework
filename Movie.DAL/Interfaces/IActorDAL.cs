@@ -9,6 +9,6 @@ namespace Movie.DAL.Interfaces
 {
     public interface IActorDAL : IBaseDAL<Actor>
     {
-        void GetActor(Actor actor);
+        List<Actor> GetActors();
     }
 }

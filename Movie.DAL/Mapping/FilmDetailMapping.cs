@@ -17,6 +17,8 @@ namespace Movie.DAL.Mapping
                 .HasOne(x => x.Film)
                 .WithOne(x => x.FilmDetail)
                 .HasForeignKey<FilmDetail>(x => x.FilmId);
+
+            builder.ToTable("TblFilmDetail");
         }
     }
 }

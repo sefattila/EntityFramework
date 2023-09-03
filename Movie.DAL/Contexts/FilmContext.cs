@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Movie.DAL.Mapping;
+using Movie.DAL.SeedData;
 using Movie.DATA.Concrete;
 using System;
 using System.Collections.Generic;
@@ -18,12 +20,25 @@ namespace Movie.DAL.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();
-            optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=MovieDB;Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=MovieDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-LAUF8V8;Database=MovieDB;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            //hazır veri
+            modelBuilder.ApplyConfiguration(new ActorSeedData());
+            modelBuilder.ApplyConfiguration(new FilmActorSeedData());
+            modelBuilder.ApplyConfiguration(new FilmCategorySeedData());
+            modelBuilder.ApplyConfiguration(new FilmDetailSeedData());
+            modelBuilder.ApplyConfiguration(new FilmSeedData());
+
+            //fluent api
+            modelBuilder.ApplyConfiguration(new ActorMapping());
+            modelBuilder.ApplyConfiguration(new FilmActorMapping());
+            modelBuilder.ApplyConfiguration(new FilmCategoryMapping());
+            modelBuilder.ApplyConfiguration(new FilmDetailMapping());
+            modelBuilder.ApplyConfiguration(new FilmMapping());
         }
     }
 }

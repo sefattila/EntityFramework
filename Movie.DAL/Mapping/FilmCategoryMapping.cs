@@ -13,7 +13,10 @@ namespace Movie.DAL.Mapping
     {
         public void Configure(EntityTypeBuilder<FilmCategory> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(x => x.CategoryName)
+                .IsRequired();
+
+            builder.ToTable("TblCategory");
         }
     }
 }

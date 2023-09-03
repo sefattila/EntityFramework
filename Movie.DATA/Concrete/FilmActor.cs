@@ -11,7 +11,7 @@ namespace Movie.DATA.Concrete
     {
         public int ActorId { get; set; }
         public int FilmId { get; set; }
-        public int WorkDay { get; set; }
+        public int? WorkDay { get; set; }
 
         public virtual Film Film { get; set; }
         public virtual Actor Actor { get; set; }
