@@ -20,8 +20,8 @@ namespace Movie.DAL.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();
-            //optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=MovieDB;Trusted_Connection=True;");
-            optionsBuilder.UseSqlServer("Server=DESKTOP-LAUF8V8;Database=MovieDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=MovieDB;Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer("Server=DESKTOP-LAUF8V8;Database=MovieDB;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

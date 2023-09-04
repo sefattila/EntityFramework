@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Movie.DAL.Migrations
 {
-    public partial class initialCatolog : Migration
+    public partial class duzenlendi : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -131,10 +131,10 @@ namespace Movie.DAL.Migrations
                 columns: new[] { "Id", "ActorName", "Biography", "BirthDate", "CreatedDate", "DeletedDate", "Status", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, "Leonardo DiCaprio", null, null, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(5743), null, 0, null },
-                    { 2, "Tom Hanks", null, null, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(5745), null, 0, null },
-                    { 3, "Michael Clarke Duncan", null, null, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(5746), null, 0, null },
-                    { 4, "Tom Hardy", null, null, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(5747), null, 0, null }
+                    { 1, "Leonardo DiCaprio", null, null, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8226), null, 0, null },
+                    { 2, "Tom Hanks", null, null, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8277), null, 0, null },
+                    { 3, "Michael Clarke Duncan", null, null, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8279), null, 0, null },
+                    { 4, "Tom Hardy", null, null, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8281), null, 0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -142,10 +142,10 @@ namespace Movie.DAL.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedDate", "DeletedDate", "Status", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, "Drama", new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6110), null, 0, null },
-                    { 2, "Action", new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6112), null, 0, null },
-                    { 3, "Science Fiction", new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6113), null, 0, null },
-                    { 4, "Comedy", new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6114), null, 0, null }
+                    { 1, "Drama", new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8742), null, 0, null },
+                    { 2, "Action", new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8744), null, 0, null },
+                    { 3, "Science Fiction", new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8746), null, 0, null },
+                    { 4, "Comedy", new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8748), null, 0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -153,10 +153,10 @@ namespace Movie.DAL.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedDate", "DeletedDate", "FilmDuration", "FilmName", "PublishDate", "Status", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6237), null, 2.5, "Cath Me If You Can", null, 0, null },
-                    { 2, 1, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6238), null, 3.0, "Forest Gump", null, 0, null },
-                    { 3, 3, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6240), null, 2.0, "Inception", null, 0, null },
-                    { 4, 1, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6241), null, 2.2999999999999998, "The Green Mile", null, 0, null }
+                    { 1, 1, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8925), null, 2.5, "Cath Me If You Can", null, 0, null },
+                    { 2, 1, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8927), null, 3.0, "Forest Gump", null, 0, null },
+                    { 3, 3, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8929), null, 2.0, "Inception", null, 0, null },
+                    { 4, 1, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8931), null, 2.2999999999999998, "The Green Mile", null, 0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -164,13 +164,13 @@ namespace Movie.DAL.Migrations
                 columns: new[] { "Id", "ActorId", "CreatedDate", "DeletedDate", "FilmId", "Status", "UpdatedDate", "WorkDay" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6035), null, 1, 0, null, null },
-                    { 2, 2, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6037), null, 1, 0, null, null },
-                    { 3, 2, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6039), null, 2, 0, null, null },
-                    { 4, 1, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6040), null, 3, 0, null, null },
-                    { 5, 4, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6041), null, 3, 0, null, null },
-                    { 6, 2, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6042), null, 4, 0, null, null },
-                    { 7, 3, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6043), null, 4, 0, null, null }
+                    { 1, 1, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8617), null, 1, 0, null, null },
+                    { 2, 2, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8621), null, 1, 0, null, null },
+                    { 3, 2, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8622), null, 2, 0, null, null },
+                    { 4, 1, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8624), null, 3, 0, null, null },
+                    { 5, 4, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8626), null, 3, 0, null, null },
+                    { 6, 2, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8627), null, 4, 0, null, null },
+                    { 7, 3, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8629), null, 4, 0, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -178,10 +178,10 @@ namespace Movie.DAL.Migrations
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "FilmDetails", "FilmId", "Status", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6177), null, "DenemeDenemeDeneme", 1, 0, null },
-                    { 2, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6178), null, "DenemeDenemeDeneme", 2, 0, null },
-                    { 3, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6179), null, "DenemeDenemeDeneme", 3, 0, null },
-                    { 4, new DateTime(2023, 9, 3, 18, 28, 59, 592, DateTimeKind.Local).AddTicks(6180), null, "DenemeDenemeDeneme", 4, 0, null }
+                    { 1, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8832), null, "DenemeDenemeDeneme", 1, 0, null },
+                    { 2, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8834), null, "DenemeDenemeDeneme", 2, 0, null },
+                    { 3, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8836), null, "DenemeDenemeDeneme", 3, 0, null },
+                    { 4, new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8837), null, "DenemeDenemeDeneme", 4, 0, null }
                 });
 
             migrationBuilder.CreateIndex(

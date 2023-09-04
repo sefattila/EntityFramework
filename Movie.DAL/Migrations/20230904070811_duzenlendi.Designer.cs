@@ -12,8 +12,8 @@ using Movie.DAL.Contexts;
 namespace Movie.DAL.Migrations
 {
     [DbContext(typeof(FilmContext))]
-    [Migration("20230903160512_uiModified")]
-    partial class uiModified
+    [Migration("20230904070811_duzenlendi")]
+    partial class duzenlendi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,28 +63,28 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 1,
                             ActorName = "Leonardo DiCaprio",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6519),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8226),
                             Status = 0
                         },
                         new
                         {
                             Id = 2,
                             ActorName = "Tom Hanks",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6520),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8277),
                             Status = 0
                         },
                         new
                         {
                             Id = 3,
                             ActorName = "Michael Clarke Duncan",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6521),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8279),
                             Status = 0
                         },
                         new
                         {
                             Id = 4,
                             ActorName = "Tom Hardy",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6522),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8281),
                             Status = 0
                         });
                 });
@@ -133,7 +133,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(7047),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8925),
                             FilmDuration = 2.5,
                             FilmName = "Cath Me If You Can",
                             Status = 0
@@ -142,7 +142,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(7049),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8927),
                             FilmDuration = 3.0,
                             FilmName = "Forest Gump",
                             Status = 0
@@ -151,7 +151,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 3,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(7050),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8929),
                             FilmDuration = 2.0,
                             FilmName = "Inception",
                             Status = 0
@@ -160,7 +160,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 4,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(7051),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8931),
                             FilmDuration = 2.2999999999999998,
                             FilmName = "The Green Mile",
                             Status = 0
@@ -209,7 +209,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 1,
                             ActorId = 1,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6829),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8617),
                             FilmId = 1,
                             Status = 0
                         },
@@ -217,7 +217,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 2,
                             ActorId = 2,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6831),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8621),
                             FilmId = 1,
                             Status = 0
                         },
@@ -225,7 +225,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 3,
                             ActorId = 2,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6832),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8622),
                             FilmId = 2,
                             Status = 0
                         },
@@ -233,7 +233,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 4,
                             ActorId = 1,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6833),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8624),
                             FilmId = 3,
                             Status = 0
                         },
@@ -241,7 +241,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 5,
                             ActorId = 4,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6834),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8626),
                             FilmId = 3,
                             Status = 0
                         },
@@ -249,7 +249,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 6,
                             ActorId = 2,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6836),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8627),
                             FilmId = 4,
                             Status = 0
                         },
@@ -257,7 +257,7 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 7,
                             ActorId = 3,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6837),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8629),
                             FilmId = 4,
                             Status = 0
                         });
@@ -297,28 +297,28 @@ namespace Movie.DAL.Migrations
                         {
                             Id = 1,
                             CategoryName = "Drama",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6918),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8742),
                             Status = 0
                         },
                         new
                         {
                             Id = 2,
                             CategoryName = "Action",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6919),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8744),
                             Status = 0
                         },
                         new
                         {
                             Id = 3,
                             CategoryName = "Science Fiction",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6920),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8746),
                             Status = 0
                         },
                         new
                         {
                             Id = 4,
                             CategoryName = "Comedy",
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6921),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8748),
                             Status = 0
                         });
                 });
@@ -361,7 +361,7 @@ namespace Movie.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6985),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8832),
                             FilmDetails = "DenemeDenemeDeneme",
                             FilmId = 1,
                             Status = 0
@@ -369,7 +369,7 @@ namespace Movie.DAL.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6987),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8834),
                             FilmDetails = "DenemeDenemeDeneme",
                             FilmId = 2,
                             Status = 0
@@ -377,7 +377,7 @@ namespace Movie.DAL.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6988),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8836),
                             FilmDetails = "DenemeDenemeDeneme",
                             FilmId = 3,
                             Status = 0
@@ -385,7 +385,7 @@ namespace Movie.DAL.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 9, 3, 19, 5, 11, 962, DateTimeKind.Local).AddTicks(6989),
+                            CreatedDate = new DateTime(2023, 9, 4, 10, 8, 11, 444, DateTimeKind.Local).AddTicks(8837),
                             FilmDetails = "DenemeDenemeDeneme",
                             FilmId = 4,
                             Status = 0

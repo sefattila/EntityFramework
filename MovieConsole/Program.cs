@@ -14,7 +14,7 @@ namespace MovieConsole
             //Console.WriteLine(filmCategory.CategoryURL);
             using (var context = new FilmContext())
             {
-                FilmCategoryUI filmCategoryUI = new FilmCategoryUI(context.Set<FilmCategory>(),context);
+                FilmUI filmCategoryUI = new FilmUI(context.Set<Film>(),context);
 
                 filmCategoryUI.Exe();
             }
