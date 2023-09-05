@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventProject.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230904135633_initialCatologss")]
-    partial class initialCatologss
+    [Migration("20230905103245_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -201,17 +201,21 @@ namespace EventProject.Repository.Migrations
 
             modelBuilder.Entity("EventProject.Core.Entities.Ticket", b =>
                 {
-                    b.HasOne("EventProject.Core.Entities.Customer", null)
+                    b.HasOne("EventProject.Core.Entities.Customer", "Customer")
                         .WithMany("Tickets")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EventProject.Core.Entities.Event", null)
+                    b.HasOne("EventProject.Core.Entities.Event", "Event")
                         .WithMany("Tickets")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Event");
                 });
 
             modelBuilder.Entity("EventProject.Core.Entities.Category", b =>

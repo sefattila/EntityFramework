@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EventProject.Repository.Migrations
 {
-    public partial class initialCatolog : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,19 +46,6 @@ namespace EventProject.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tickets",
-                columns: table => new
-                {
-                    EventId = table.Column<int>(type: "int", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: false),
-                    TicketDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tickets", x => new { x.EventId, x.CustomerId });
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Events",
                 columns: table => new
                 {
@@ -89,31 +76,6 @@ namespace EventProject.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CustomerTicket",
-                columns: table => new
-                {
-                    CustomerId = table.Column<int>(type: "int", nullable: false),
-                    TicketsEventId = table.Column<int>(type: "int", nullable: false),
-                    TicketsCustomerId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CustomerTicket", x => new { x.CustomerId, x.TicketsEventId, x.TicketsCustomerId });
-                    table.ForeignKey(
-                        name: "FK_CustomerTicket_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CustomerTicket_Tickets_TicketsEventId_TicketsCustomerId",
-                        columns: x => new { x.TicketsEventId, x.TicketsCustomerId },
-                        principalTable: "Tickets",
-                        principalColumns: new[] { "EventId", "CustomerId" },
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "EventDetails",
                 columns: table => new
                 {
@@ -133,34 +95,29 @@ namespace EventProject.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EventTicket",
+                name: "Tickets",
                 columns: table => new
                 {
-                    EventsId = table.Column<int>(type: "int", nullable: false),
-                    TicketsEventId = table.Column<int>(type: "int", nullable: false),
-                    TicketsCustomerId = table.Column<int>(type: "int", nullable: false)
+                    EventId = table.Column<int>(type: "int", nullable: false),
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    TicketDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EventTicket", x => new { x.EventsId, x.TicketsEventId, x.TicketsCustomerId });
+                    table.PrimaryKey("PK_Tickets", x => new { x.EventId, x.CustomerId });
                     table.ForeignKey(
-                        name: "FK_EventTicket_Events_EventsId",
-                        column: x => x.EventsId,
-                        principalTable: "Events",
+                        name: "FK_Tickets_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_EventTicket_Tickets_TicketsEventId_TicketsCustomerId",
-                        columns: x => new { x.TicketsEventId, x.TicketsCustomerId },
-                        principalTable: "Tickets",
-                        principalColumns: new[] { "EventId", "CustomerId" },
+                        name: "FK_Tickets_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CustomerTicket_TicketsEventId_TicketsCustomerId",
-                table: "CustomerTicket",
-                columns: new[] { "TicketsEventId", "TicketsCustomerId" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Events_CategoryId",
@@ -168,30 +125,24 @@ namespace EventProject.Repository.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventTicket_TicketsEventId_TicketsCustomerId",
-                table: "EventTicket",
-                columns: new[] { "TicketsEventId", "TicketsCustomerId" });
+                name: "IX_Tickets_CustomerId",
+                table: "Tickets",
+                column: "CustomerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CustomerTicket");
-
-            migrationBuilder.DropTable(
                 name: "EventDetails");
 
             migrationBuilder.DropTable(
-                name: "EventTicket");
+                name: "Tickets");
 
             migrationBuilder.DropTable(
                 name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Events");
-
-            migrationBuilder.DropTable(
-                name: "Tickets");
 
             migrationBuilder.DropTable(
                 name: "Categories");
