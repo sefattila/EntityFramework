@@ -1,5 +1,4 @@
 ﻿using EventProject.Core.Entities;
-using EventProject.Repository.Contexts;
 using EventProject.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,52 +7,54 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventProject.Repository.Concretes
+namespace EventProject.Service.EventDetailService
 {
-    public class EventDetailRepo : IEventDetailRepo
+    public class EventDetailService : IEventDetailService
     {
-        private readonly AppDbContext _context;
+        private readonly IEventDetailRepo _repo;
 
-        public EventDetailRepo(AppDbContext context)
+        public EventDetailService(IEventDetailRepo repo)
         {
-            this._context = context;
+            this._repo = repo;
         }
 
         public bool Any(Expression<Func<EventDetail, bool>> expression)
         {
-            return _context.EventDetails.Any(expression);
+            return _repo.Any(expression);
         }
 
         public void Create(EventDetail entity)
         {
-            _context.EventDetails.Add(entity);
-            _context.SaveChanges();
+            if (entity.EventDetailId > 0 && Any(x => x.EventDetailId != entity.EventDetailId))
+            {
+                _repo.Create(entity);
+            }
+            else throw new Exception("Böyle Bir Id Var");
         }
 
         public void Delete(EventDetail entity)
         {
-            _context.EventDetails.Remove(entity);
-            _context.SaveChanges();
+            _repo.Delete(entity);
         }
 
         public EventDetail GetDefault(Expression<Func<EventDetail, bool>> expression)
         {
-            return _context.EventDetails.FirstOrDefault(expression);
+            return _repo.GetDefault(expression);
         }
 
         public EventDetail GetDefaultById(int id)
         {
-            return _context.EventDetails.Find(id);
+            return _repo.GetDefaultById(id);
         }
 
         public IList<EventDetail> GetDefaults(Expression<Func<EventDetail, bool>> expression)
         {
-            return _context.EventDetails.Where(expression).ToList();
+            return _repo.GetDefaults(expression);
         }
 
         public void Update(EventDetail entity)
         {
-            _context.SaveChanges();
+            _repo.Update(entity);
         }
     }
 }

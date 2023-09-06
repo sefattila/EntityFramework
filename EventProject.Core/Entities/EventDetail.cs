@@ -12,6 +12,7 @@ namespace EventProject.Core.Entities
         [Key]
         public int EventDetailId { get; set; }
 
+        //sunucu taraflı kontrol
         [RegularExpression(@"^(0(\d{3}) (\d{3}) (\d{2}) (\d{2}))$",ErrorMessage ="Hatalı Girdiniz. 555 55 55")]
         public string EventPhone { get; set; }
 

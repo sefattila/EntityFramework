@@ -26,7 +26,7 @@ namespace EventProject.Service.CategoryService
 
         public void Create(Category entity)
         {
-            if (Any(x => x.CategoryName.ToLower() != entity.CategoryName.ToLower()))
+            if (!Any(x => x.CategoryName.ToLower() != entity.CategoryName.ToLower()))
             {
                 _repo.Create(entity);
             }
@@ -66,7 +66,9 @@ namespace EventProject.Service.CategoryService
 
         public void Update(Category entity)
         {
-            throw new NotImplementedException();
+            entity.UpdateDate= DateTime.Now;
+            entity.Status = Status.Modified;
+            _repo.Update(entity);
         }
     }
 }

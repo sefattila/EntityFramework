@@ -47,11 +47,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-EF-NLayerEvent", "12-EF-
 		Biletix.txt = Biletix.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventProject.Core", "EventProject.Core\EventProject.Core.csproj", "{327E6077-DF5B-4511-826D-F5BA8748F76C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventProject.Core", "EventProject.Core\EventProject.Core.csproj", "{327E6077-DF5B-4511-826D-F5BA8748F76C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventProject.Repository", "EventProject.Repository\EventProject.Repository.csproj", "{8072A0C1-B2FD-47D1-B9E9-1A073C3576F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventProject.Repository", "EventProject.Repository\EventProject.Repository.csproj", "{8072A0C1-B2FD-47D1-B9E9-1A073C3576F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventProject.Service", "EventProject.Service\EventProject.Service.csproj", "{7C22A898-C7FB-4A82-AAE4-6B9803E9F46A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventProject.Service", "EventProject.Service\EventProject.Service.csproj", "{7C22A898-C7FB-4A82-AAE4-6B9803E9F46A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventProject.ConsoleApp", "EventProject.ConsoleApp\EventProject.ConsoleApp.csproj", "{FFC3B2A0-79F4-479D-B680-180FC81E4AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +137,10 @@ Global
 		{7C22A898-C7FB-4A82-AAE4-6B9803E9F46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C22A898-C7FB-4A82-AAE4-6B9803E9F46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C22A898-C7FB-4A82-AAE4-6B9803E9F46A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC3B2A0-79F4-479D-B680-180FC81E4AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC3B2A0-79F4-479D-B680-180FC81E4AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC3B2A0-79F4-479D-B680-180FC81E4AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC3B2A0-79F4-479D-B680-180FC81E4AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{327E6077-DF5B-4511-826D-F5BA8748F76C} = {F670CDCB-29BD-4E10-8AA1-F012E65C895C}
 		{8072A0C1-B2FD-47D1-B9E9-1A073C3576F4} = {F670CDCB-29BD-4E10-8AA1-F012E65C895C}
 		{7C22A898-C7FB-4A82-AAE4-6B9803E9F46A} = {F670CDCB-29BD-4E10-8AA1-F012E65C895C}
+		{FFC3B2A0-79F4-479D-B680-180FC81E4AAF} = {F670CDCB-29BD-4E10-8AA1-F012E65C895C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D6D1560-E26F-4FCF-B794-091FC813B4A7}
